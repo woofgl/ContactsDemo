@@ -2,7 +2,7 @@
 //  ContactsDetailViewController.swift
 //  ContactsDemo
 //
-//  Created by 谢冬婷 on 16/1/4.
+//  Created by woofgl on 16/1/4.
 //  Copyright © 2016年 woofgl. All rights reserved.
 //
 
@@ -11,8 +11,13 @@ import UIKit
 class ContactsDetailViewController: UIViewController {
     
     @IBOutlet var contactsLabel: UILabel!
+    @IBOutlet var contactsPhone: UILabel!
+    @IBOutlet var contactsEmail: UILabel!
     
     var contactsName: NSString = ""
+    var contactsNumber: NSString = ""
+    var contactsEmails: NSString = ""
+
     
     @IBOutlet weak var nameLabel: UILabel!
 
@@ -22,6 +27,8 @@ class ContactsDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         contactsLabel.text = contactsName as String
+        contactsPhone.text = contactsNumber as String
+        contactsEmail.text = contactsEmails as String
     }
 
     override func didReceiveMemoryWarning() {

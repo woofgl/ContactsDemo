@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,21 +70,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="abcdefghijklmnopqlmnopq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQc-69-egP">
-                                <rect key="frame" x="20" y="155" width="426" height="91"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contactName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQc-69-egP">
+                                <rect key="frame" x="140" y="104" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Sd-NU-wmM"/>
+                                    <constraint firstAttribute="width" constant="280" id="hzA-ze-sY8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whs-iZ-NRX">
+                                <rect key="frame" x="19" y="80" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="whs-iZ-NRX" secondAttribute="height" multiplier="1:1" id="hl4-2Q-5Ic"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="phone :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-3Z-U03">
+                                <rect key="frame" x="26" y="180" width="80" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12345678901" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-GU-d8d">
+                                <rect key="frame" x="126" y="180" width="150" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="email :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAC-aE-2VQ">
+                                <rect key="frame" x="26" y="235" width="80" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="www.baidu.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhJ-uO-zaL">
+                                <rect key="frame" x="126" y="235" width="151" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JQc-69-egP" firstAttribute="leading" secondItem="WNo-1j-JrD" secondAttribute="leadingMargin" id="Iux-QL-qhZ"/>
+                            <constraint firstItem="DMS-GU-d8d" firstAttribute="leading" secondItem="gCB-3Z-U03" secondAttribute="trailing" constant="10" id="A6i-vc-vNN"/>
+                            <constraint firstItem="JQc-69-egP" firstAttribute="leading" secondItem="WNo-1j-JrD" secondAttribute="leadingMargin" constant="120" id="Iux-QL-qhZ"/>
+                            <constraint firstItem="PhJ-uO-zaL" firstAttribute="leading" secondItem="yAC-aE-2VQ" secondAttribute="trailing" constant="10" id="L7t-hw-nHA"/>
+                            <constraint firstItem="gCB-3Z-U03" firstAttribute="top" secondItem="whs-iZ-NRX" secondAttribute="bottom" constant="20" id="RMH-7W-AM0"/>
+                            <constraint firstItem="gCB-3Z-U03" firstAttribute="leading" secondItem="WNo-1j-JrD" secondAttribute="leadingMargin" id="T3L-dd-uRa"/>
+                            <constraint firstItem="whs-iZ-NRX" firstAttribute="top" secondItem="kqO-yP-QP9" secondAttribute="bottom" constant="20" id="VX7-Uf-ENO"/>
+                            <constraint firstItem="DMS-GU-d8d" firstAttribute="top" secondItem="whs-iZ-NRX" secondAttribute="bottom" constant="20" id="b89-Ot-i1P"/>
+                            <constraint firstItem="gCB-3Z-U03" firstAttribute="leading" secondItem="yAC-aE-2VQ" secondAttribute="leading" id="lVU-80-inx"/>
+                            <constraint firstItem="yAC-aE-2VQ" firstAttribute="leading" secondItem="WNo-1j-JrD" secondAttribute="leadingMargin" constant="20" id="n77-bR-seT"/>
+                            <constraint firstItem="whs-iZ-NRX" firstAttribute="leading" secondItem="WNo-1j-JrD" secondAttribute="leadingMargin" constant="1" id="sky-7o-dVc"/>
+                            <constraint firstItem="JQc-69-egP" firstAttribute="top" secondItem="kqO-yP-QP9" secondAttribute="bottom" constant="40" id="tao-lm-9eh"/>
+                            <constraint firstItem="JQc-69-egP" firstAttribute="leading" secondItem="whs-iZ-NRX" secondAttribute="trailing" constant="20" id="zsJ-mc-mOx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p6j-ti-aIQ"/>
                     <connections>
+                        <outlet property="contactsEmail" destination="PhJ-uO-zaL" id="LEn-Cw-BDV"/>
                         <outlet property="contactsLabel" destination="JQc-69-egP" id="U7d-98-46p"/>
+                        <outlet property="contactsPhone" destination="DMS-GU-d8d" id="SyH-z8-5A4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWf-gn-eiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
