@@ -20,6 +20,7 @@ class AddContactsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var rightButtonItem:UIBarButtonItem?
+    var leftButtonItem: UIBarButtonItem?
     var contacts: [CNMutableContact] = []
     
     override func viewDidLoad() {
@@ -36,6 +37,8 @@ class AddContactsViewController: UIViewController {
         }
         
         setupRightBarButtonItem()
+        setupLeftBarButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,13 +46,14 @@ class AddContactsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //setup right button
     func setupRightBarButtonItem() {
         rightButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self,action: "rightBarButtonItemClicked")
         navigationItem.rightBarButtonItem = self.rightButtonItem
         
     }
     
-    
+    //event for right button, save data
     func rightBarButtonItemClicked(){
         let newContact = CNMutableContact()
         newContact.givenName = firstname.text!
@@ -63,5 +67,16 @@ class AddContactsViewController: UIViewController {
         contacts.append(newContact)
         
         (self.parentViewController as! UINavigationController).popViewControllerAnimated(true)
+    }
+    
+    //setup left button
+    func setupLeftBarButtonItem(){
+        leftButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self,action: "backToPrevious")
+        navigationItem.leftBarButtonItem = self.leftButtonItem
+    }
+    
+    //event for left button, back to previous page
+    func backToPrevious(){
+       self.navigationController?.popViewControllerAnimated(true)
     }
 }

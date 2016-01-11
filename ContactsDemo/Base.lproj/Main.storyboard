@@ -314,6 +314,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Iwt-pX-eI3">
+                        <barButtonItem key="leftBarButtonItem" title="cancel" style="plain" id="nEA-gs-4xR"/>
                         <barButtonItem key="rightBarButtonItem" title="save" style="plain" id="vTH-FY-ny5"/>
                     </navigationItem>
                     <connections>
