@@ -14,6 +14,7 @@
 		1B2291861C3A0AF300D18BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B2291841C3A0AF300D18BA3 /* LaunchScreen.storyboard */; };
 		1B22918E1C3A62EA00D18BA3 /* ContactsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B22918D1C3A62EA00D18BA3 /* ContactsDetailViewController.swift */; };
 		1B4B2A081C3E482D0099C904 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4B2A071C3E482D0099C904 /* AddContactsViewController.swift */; };
+		1BC502F71C434F6500F781E9 /* ContactsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC502F61C434F6500F781E9 /* ContactsDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1B2291871C3A0AF300D18BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B22918D1C3A62EA00D18BA3 /* ContactsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDetailViewController.swift; sourceTree = "<group>"; };
 		1B4B2A071C3E482D0099C904 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
+		1BC502F61C434F6500F781E9 /* ContactsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1B2291871C3A0AF300D18BA3 /* Info.plist */,
 				1B22918D1C3A62EA00D18BA3 /* ContactsDetailViewController.swift */,
 				1B4B2A071C3E482D0099C904 /* AddContactsViewController.swift */,
+				1BC502F61C434F6500F781E9 /* ContactsDB.swift */,
 			);
 			path = ContactsDemo;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				1B22917E1C3A0AF300D18BA3 /* ViewController.swift in Sources */,
 				1B4B2A081C3E482D0099C904 /* AddContactsViewController.swift in Sources */,
+				1BC502F71C434F6500F781E9 /* ContactsDB.swift in Sources */,
 				1B22917C1C3A0AF300D18BA3 /* AppDelegate.swift in Sources */,
 				1B22918E1C3A62EA00D18BA3 /* ContactsDetailViewController.swift in Sources */,
 			);

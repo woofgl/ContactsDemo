@@ -17,7 +17,7 @@ class AddContactsViewController: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var firstname: UITextField!
-    @IBOutlet var tableView: UITableView!
+    var _viewController: ViewController = ViewController.init()
     
     var rightButtonItem:UIBarButtonItem?
     var leftButtonItem: UIBarButtonItem?
@@ -64,9 +64,11 @@ class AddContactsViewController: UIViewController {
         let homeEmail = CNLabeledValue(label: CNLabelHome, value: email.text!)
         newContact.emailAddresses.append(homeEmail)
         
-        contacts.append(newContact)
+        ContactsDB.addContact(newContact)
         
         (self.parentViewController as! UINavigationController).popViewControllerAnimated(true)
+        self._viewController.refreshData()
+        
     }
     
     //setup left button
@@ -78,5 +80,9 @@ class AddContactsViewController: UIViewController {
     //event for left button, back to previous page
     func backToPrevious(){
        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func setViewController(viewController: ViewController){
+        _viewController = viewController;
     }
 }
