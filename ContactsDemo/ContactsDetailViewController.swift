@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contacts
 
 class ContactsDetailViewController: UIViewController {
     
@@ -14,10 +15,12 @@ class ContactsDetailViewController: UIViewController {
     @IBOutlet var contactsPhone: UILabel!
     @IBOutlet var contactsEmail: UILabel!
     
-    var contactsName: NSString = ""
-    var contactsNumber: NSString = ""
-    var contactsEmails: NSString = ""
-
+    var contactGivenName: NSString = ""
+    var contactFamilyName: NSString = ""
+    var contactOrganizationName: NSString = ""
+    var contactNote: NSString = ""
+    var contactEmail = [CNLabeledValue]()
+    var contactPhone = [CNLabeledValue]()
     
     @IBOutlet weak var nameLabel: UILabel!
 
@@ -26,25 +29,15 @@ class ContactsDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        contactsLabel.text = contactsName as String
-        contactsPhone.text = contactsNumber as String
-        contactsEmail.text = contactsEmails as String
+        //set value to show
+        contactsLabel.text = (contactGivenName as String) + " " + (contactFamilyName as String)
+        contactsPhone.text = contactPhone.first?.value as? String
+        contactsEmail.text = contactEmail.first?.value as? String
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

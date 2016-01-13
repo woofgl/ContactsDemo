@@ -62,7 +62,13 @@ class AddContactsViewController: UIViewController {
         newContact.note = notes.text!
         
         let homeEmail = CNLabeledValue(label: CNLabelHome, value: email.text!)
-        newContact.emailAddresses.append(homeEmail)
+//        newContact.emailAddresses.append(homeEmail)
+        newContact.emailAddresses = [homeEmail]
+        
+//        let phoneNum = CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: phone.text!)
+        newContact.phoneNumbers = [CNLabeledValue(
+            label:CNLabelPhoneNumberiPhone,
+            value:CNPhoneNumber(stringValue: phone.text!))]
         
         ContactsDB.addContact(newContact)
         

@@ -53,13 +53,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let indexPath = self.tableView.indexPathForSelectedRow
             let contact = ContactsDB.getContactByIndex(indexPath!.row)
             
-            let object = contact.givenName as NSString
-            let objectNum = contact.phoneNumbers
-            let objectEmail = contact.emailAddresses
+            let objectGivenName = contact.givenName as NSString
+            let objectFamilyName = contact.familyName as NSString
+            let objectOrganizationName = contact.organizationName as NSString
+            let objectNote = contact.note as NSString
+            let objectEmails = contact.emailAddresses
+            let objectPhone = contact.phoneNumbers
             
-            destViewController.contactsName = object
-            destViewController.contactsNumber = objectNum[0].label
-            destViewController.contactsEmails = objectEmail[0].label
+            destViewController.contactGivenName = objectGivenName
+            destViewController.contactFamilyName = objectFamilyName
+            destViewController.contactOrganizationName = objectOrganizationName
+            destViewController.contactNote = objectNote
+            destViewController.contactEmail = objectEmails
+            destViewController.contactPhone = objectPhone
             
             destViewController.hidesBottomBarWhenPushed = true
         }
