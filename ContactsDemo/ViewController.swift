@@ -80,6 +80,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func refreshData(){
         self.tableView.reloadData()
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // Delete the row from the data source
+        if editingStyle == .Delete {
+            ContactsDB.remove(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        // Request table view to reload
+        tableView.reloadData()
+    }
 
 
 }

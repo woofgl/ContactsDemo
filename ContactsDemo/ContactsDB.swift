@@ -31,4 +31,8 @@ class ContactsDB: NSObject {
         return contacts[index]
     }
     
+    static func remove(indexPath: Int){
+        contacts.removeAtIndex(indexPath)
+    }
+    
 }
