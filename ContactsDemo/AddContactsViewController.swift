@@ -18,6 +18,7 @@ class AddContactsViewController: UIViewController {
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var firstname: UITextField!
     var _viewController: ViewController = ViewController.init()
+    var contact: CNMutableContact = CNMutableContact.init()
     
     var rightButtonItem:UIBarButtonItem?
     var leftButtonItem: UIBarButtonItem?
@@ -27,14 +28,13 @@ class AddContactsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        var contactValue:CNContact{
-            let contact = CNMutableContact()
-            contact.givenName = firstname.text!
-            contact.familyName = lastname.text!
-            return contact
-            
-        }
+
+            notes.text = contact.note
+            company.text = contact.organizationName
+            email.text = contact.emailAddresses.first?.value as? String
+            phone.text = contact.phoneNumbers.first?.value as? String
+            lastname.text = contact.familyName
+            firstname.text = contact.givenName
         
         setupRightBarButtonItem()
         setupLeftBarButtonItem()

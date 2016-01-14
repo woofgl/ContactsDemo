@@ -148,7 +148,13 @@
                             <constraint firstItem="JQc-69-egP" firstAttribute="leading" secondItem="whs-iZ-NRX" secondAttribute="trailing" constant="20" id="zsJ-mc-mOx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="p6j-ti-aIQ"/>
+                    <navigationItem key="navigationItem" id="p6j-ti-aIQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="J5Y-BR-vKB">
+                            <connections>
+                                <segue destination="z2x-a6-DW5" kind="push" identifier="editContact" id="5fa-8n-GbE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contactsEmail" destination="PhJ-uO-zaL" id="LEn-Cw-BDV"/>
                         <outlet property="contactsLabel" destination="JQc-69-egP" id="U7d-98-46p"/>
@@ -349,4 +355,7 @@
             <point key="canvasLocation" x="191" y="1010"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5fa-8n-GbE"/>
+    </inferredMetricsTieBreakers>
 </document>

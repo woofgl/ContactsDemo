@@ -49,6 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "showContactsDetail" {
             
             let destViewController = segue.destinationViewController as! ContactsDetailViewController
+            destViewController.setViewController(self)
             
             let indexPath = self.tableView.indexPathForSelectedRow
             let contact = ContactsDB.getContactByIndex(indexPath!.row)
@@ -66,6 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destViewController.contactNote = objectNote
             destViewController.contactEmail = objectEmails
             destViewController.contactPhone = objectPhone
+            destViewController.contact = contact
             
             destViewController.hidesBottomBarWhenPushed = true
         }

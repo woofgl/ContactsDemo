@@ -14,6 +14,9 @@ class ContactsDetailViewController: UIViewController {
     @IBOutlet var contactsLabel: UILabel!
     @IBOutlet var contactsPhone: UILabel!
     @IBOutlet var contactsEmail: UILabel!
+    var contact: CNMutableContact = CNMutableContact.init()
+    
+    var _viewController: ViewController = ViewController.init()
     
     var contactGivenName: NSString = ""
     var contactFamilyName: NSString = ""
@@ -39,5 +42,24 @@ class ContactsDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setupRightBarButtonItem(){
+       let rightBarButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "rightBarButtonItemClicked")
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    func setViewController(viewController: ViewController){
+        _viewController = viewController;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editContact"{
+            let destViewController = segue.destinationViewController as! AddContactsViewController
+            
+            destViewController.contact = self.contact
+        }
+    }
+    
+    
 
 }
