@@ -68,6 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destViewController.contactEmail = objectEmails
             destViewController.contactPhone = objectPhone
             destViewController.contact = contact
+            destViewController.num = indexPath!.row
             
             destViewController.hidesBottomBarWhenPushed = true
         }

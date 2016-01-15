@@ -15,6 +15,7 @@ class ContactsDetailViewController: UIViewController {
     @IBOutlet var contactsPhone: UILabel!
     @IBOutlet var contactsEmail: UILabel!
     var contact: CNMutableContact = CNMutableContact.init()
+    var num: Int = 0
     
     var _viewController: ViewController = ViewController.init()
     
@@ -57,6 +58,8 @@ class ContactsDetailViewController: UIViewController {
             let destViewController = segue.destinationViewController as! AddContactsViewController
             
             destViewController.contact = self.contact
+            destViewController.num = self.num
+            destViewController.isEdit = true
         }
     }
     

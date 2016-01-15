@@ -19,6 +19,8 @@ class AddContactsViewController: UIViewController {
     @IBOutlet weak var firstname: UITextField!
     var _viewController: ViewController = ViewController.init()
     var contact: CNMutableContact = CNMutableContact.init()
+    var num: Int = 0
+    var isEdit : Bool = false
     
     var rightButtonItem:UIBarButtonItem?
     var leftButtonItem: UIBarButtonItem?
@@ -62,18 +64,22 @@ class AddContactsViewController: UIViewController {
         newContact.note = notes.text!
         
         let homeEmail = CNLabeledValue(label: CNLabelHome, value: email.text!)
-//        newContact.emailAddresses.append(homeEmail)
+        //        newContact.emailAddresses.append(homeEmail)
         newContact.emailAddresses = [homeEmail]
         
-//        let phoneNum = CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: phone.text!)
+        //        let phoneNum = CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: phone.text!)
         newContact.phoneNumbers = [CNLabeledValue(
             label:CNLabelPhoneNumberiPhone,
             value:CNPhoneNumber(stringValue: phone.text!))]
         
-        ContactsDB.addContact(newContact)
-        
-        (self.parentViewController as! UINavigationController).popViewControllerAnimated(true)
-        self._viewController.refreshData()
+        if !isEdit {
+            ContactsDB.addContact(newContact)
+            (self.parentViewController as! UINavigationController).popViewControllerAnimated(true)
+            self._viewController.refreshData()
+        }else{
+            ContactsDB.editContact(newContact, num: self.num)
+            (self.parentViewController as! UINavigationController).popViewControllerAnimated(true)
+        }
         
     }
     
