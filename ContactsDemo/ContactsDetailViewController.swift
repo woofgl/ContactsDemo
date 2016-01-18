@@ -35,7 +35,7 @@ class ContactsDetailViewController: UIViewController {
         
         //set value to show
         contactsLabel.text = (contactGivenName as String) + " " + (contactFamilyName as String)
-        contactsPhone.text = contactPhone.first?.value as? String
+        contactsPhone.text = ((contactPhone.first?.value) as! CNPhoneNumber).stringValue
         contactsEmail.text = contactEmail.first?.value as? String
     }
 

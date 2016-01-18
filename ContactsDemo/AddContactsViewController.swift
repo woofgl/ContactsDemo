@@ -34,7 +34,13 @@ class AddContactsViewController: UIViewController {
             notes.text = contact.note
             company.text = contact.organizationName
             email.text = contact.emailAddresses.first?.value as? String
-            phone.text = contact.phoneNumbers.first?.value as? String
+        
+            if contact.phoneNumbers.first?.value != nil {
+                phone.text = ((contact.phoneNumbers.first?.value) as! CNPhoneNumber).stringValue
+            }else{
+                phone.text = ""
+            }
+        
             lastname.text = contact.familyName
             firstname.text = contact.givenName
         
