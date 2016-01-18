@@ -27,16 +27,13 @@ class ContactsDetailViewController: UIViewController {
     var contactPhone = [CNLabeledValue]()
     
     @IBOutlet weak var nameLabel: UILabel!
-
-    override func viewDidLoad() {
+    
+    override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        //set value to show
-        contactsLabel.text = (contactGivenName as String) + " " + (contactFamilyName as String)
-        contactsPhone.text = ((contactPhone.first?.value) as! CNPhoneNumber).stringValue
-        contactsEmail.text = contactEmail.first?.value as? String
+        let contact = ContactsDB.getContactByIndex(num)
+        contactsLabel.text = contact.givenName + " " + contact.familyName
+        contactsPhone.text = ((contact.phoneNumbers.first?.value) as! CNPhoneNumber).stringValue
+        contactsEmail.text = contact.emailAddresses.first?.value as? String
     }
 
     override func didReceiveMemoryWarning() {
