@@ -23,10 +23,9 @@ class ContactsDB: NSObject {
         contacts[num].setValue(contact.givenName, forKey: "givenName")
         contacts[num].setValue(contact.familyName, forKey: "familyName")
         contacts[num].setValue(contact.organizationName, forKey: "organizationName")
-//        contacts[num].setValue(contact.phoneNumbers, forKey: "phoneNumbers")
-//        contacts[num].setValue(contact.phoneNumbers, forKey: "emailAddresses")
-        
-    
+        contacts[num].setValue(contact.phoneNumbers, forKey: "phoneNumbers")
+        contacts[num].setValue(contact.emailAddresses, forKey: "emailAddresses")
+        contacts[num].setValue(contact.note, forKey: "note")
     }
     
     static func listContact() -> [CNMutableContact]{

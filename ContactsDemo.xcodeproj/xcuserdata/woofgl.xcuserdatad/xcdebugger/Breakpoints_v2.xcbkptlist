@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ContactsDemo/ContactsDB.swift"
-            timestampString = "474535178.079498"
+            timestampString = "474790930.107106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "remove(_:)"
             landmarkType = "5">
          </BreakpointContent>
