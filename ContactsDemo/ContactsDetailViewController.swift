@@ -54,7 +54,7 @@ class ContactsDetailViewController: UIViewController {
         if segue.identifier == "editContact"{
             let destViewController = segue.destinationViewController as! AddContactsViewController
             
-            destViewController.contact = self.contact
+            destViewController.contact = ContactsDB.getContactByIndex(num)
             destViewController.num = self.num
             destViewController.isEdit = true
         }

@@ -14,6 +14,7 @@ class ContactsDB: NSObject {
 
     
     private static var contacts: [CNMutableContact] = [];
+    private static var contactNames: [String] = []
     
     static func addContact(contact: CNMutableContact){
         contacts.append(contact)
@@ -42,6 +43,13 @@ class ContactsDB: NSObject {
     
     static func remove(indexPath: Int){
         contacts.removeAtIndex(indexPath)
+    }
+    
+    static func listContactName() -> [String] {
+        for contact in contacts{
+            contactNames.append(contact.givenName + contact.familyName)
+        }
+        return contactNames
     }
     
 }
