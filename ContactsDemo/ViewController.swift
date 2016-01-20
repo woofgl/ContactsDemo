@@ -45,8 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
         }
         
-        let contact = ContactsDB.getContactByIndex(indexPath.row)
-        
         if self.searchDisplayController!.active {
             if searchResults.isEmpty {
                 cell.textLabel?.text = ""
@@ -55,6 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         } else {
+            let contact = ContactsDB.getContactByIndex(indexPath.row)
             cell.textLabel?.text = contact.givenName + " " + contact.familyName
         }
         
@@ -143,6 +142,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.performSegueWithIdentifier("showContactsDetail", sender: self)
         }
     }
-
 }
 
